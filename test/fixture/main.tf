@@ -60,13 +60,13 @@ resource "azurerm_key_vault" "test" {
   }
 }
 
-module "host_instance_netscaler" {
+module "host_instance_1" {
   source = "../../"
   ## common section ==============================
   resource_group_name = azurerm_resource_group.test.name
 
   disk_encryption_key_vault_id = azurerm_key_vault.test.id
-  ad_group_deploiement_id      = "54e6c69d-8260-4758-8517-56ce94b85885"
+  ad_group_deploiement_id      = ""
   ## vm section ==================================
   vm_hostname = "netscaler-service"
   vm_config   = var.vm_config
@@ -118,7 +118,7 @@ module "host_instance_2" {
 
   resource_group_name          = azurerm_resource_group.test.name
   disk_encryption_key_vault_id = azurerm_key_vault.test.id
-  ad_group_deploiement_id      = "54e6c69d-8260-4758-8517-56ce94b85885"
+  ad_group_deploiement_id      = ""
   vm_hostname                  = "test-service"
   vm_config                    = var.vm_config
   is_windows_image             = true

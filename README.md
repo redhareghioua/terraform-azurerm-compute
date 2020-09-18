@@ -30,7 +30,7 @@ module "host_instance_2" {
 
   resource_group_name          = azurerm_resource_group.test.name
   disk_encryption_key_vault_id = azurerm_key_vault.test.id
-  ad_group_deploiement_id      = "54e6c69d-8260-4758-8517-56ce94b85885"
+  ad_group_deploiement_id      = var.ad_group_deploiement_id
   vm_hostname                  = "test-service"
   vm_config                    = var.vm_config
   is_windows_image             = true
@@ -54,7 +54,7 @@ module "host_instance_2" {
     }
   }
 
-  #tags = local.tags
+  tags = local.tags
 }
 ```
 
